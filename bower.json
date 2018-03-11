@@ -1,0 +1,25 @@
+{
+  "name": "SpaWithBower",
+  "authors": [
+    "ARPIT CHOUDHARY <choudharyarpit99@gmail.com>"
+  ],
+  "description": "this is spa demo",
+  "main": "index.js",
+  "keywords": [
+    "spa"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.8",
+    "bootstrap": "^4.0.0",
+    "angular-route": "^1.6.8"
+  }
+}
