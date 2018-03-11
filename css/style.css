@@ -68,3 +68,6 @@ body
 #search-tips{
     font-size: 12px;
 }
+#content-archive h4{font-size: 18px;}
+#content-archive h6{margin-bottom: 0px;}
+.archive-img{width: 100%;}
