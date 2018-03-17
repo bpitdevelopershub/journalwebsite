@@ -1,0 +1,27 @@
+<div>
+    <br>
+                <h2 class="topic-head">ARCHIVES</h2>
+                <div id="content-archive">
+                    <% for(var i =0 ; i< journals.length ;i++){ %>
+                   <div id="section_1">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h2><%=journals[i].year %></h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <a href="#">
+                                <img src="img/cover.jpg" class="archive-img" alt="">
+                            </a>
+                        </div>
+                        <div class="col-md-10">
+                            <h4><a href="#">VOL <%=journals[i].vol%>, NO <%=journals[i].issue%> (<%=journals[i].year %>): <%=journals[i].title%></a></h4>
+                            <h6>Description of the cover page:</h6>
+                            <p><%=journals[i].description %></p>
+                        </div>
+                    </div>   
+                </div>
+                <% };%>
+        </div>
+</div>
