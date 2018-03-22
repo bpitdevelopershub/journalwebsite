@@ -22,18 +22,25 @@ var schema = new mongoose.Schema({
 
 var Model = mongoose.model('Model',schema);
 
-var item = {vol :95, issue:1,year:2017,title:'PLANT VOLATILES: CHEMISTRY, ECOLOGY AND EVOLUTION',
-            description: 'The cover depicts a figure from the article by Robert Junker and Amy Parachnowitsch'
-            +' in this issue. It illustrates how flower scent is a floral trait that must be considered together'
-            +' with other floral traits such as colour, morphology and flower nectar in their influenceon'
-            +' pollinator visits to flowers. Therefore flowers present multimodal signals that couldbe perceived'
-            +' by multiple sensory channels of the flower visitors.'};
-
-var dbitem = new Model(item);
-dbitem.save(function(err,data){
-    if (err) throw err;
-    console.log({name : data});
+var loginSchema = new mongoose.Schema({
+    email : String,
+    password : String
 });
+
+var LoginModel = mongoose.model("LoginModel",loginSchema);
+
+// var item = {vol :95, issue:1,year:2017,title:'PLANT VOLATILES: CHEMISTRY, ECOLOGY AND EVOLUTION',
+//             description: 'The cover depicts a figure from the article by Robert Junker and Amy Parachnowitsch'
+//             +' in this issue. It illustrates how flower scent is a floral trait that must be considered together'
+//             +' with other floral traits such as colour, morphology and flower nectar in their influenceon'
+//             +' pollinator visits to flowers. Therefore flowers present multimodal signals that couldbe perceived'
+//             +' by multiple sensory channels of the flower visitors.'};
+
+// var dbitem = new Model(item);
+// dbitem.save(function(err,data){
+//     if (err) throw err;
+//     console.log({name : data});
+// });
 
 app.get('/archive',function(request,response){
     Model.find({},function(err,data){
@@ -67,9 +74,28 @@ app.use(function (req, res, next) {
 });
 
 
-app.post('/login',function(request,response){
+// app.post('/login',function(request,response){
+//     var email = request.body.email;
+//     var password = request.body.password;
+//     // console.log(email, password);
+//     response.json({ user: 'tobi' });
+// });
+
+app.post('/login',function(request,response,next){
     var email = request.body.email;
     var password = request.body.password;
-    // console.log(email, password);
-    response.json({ user: 'tobi' });
+    console.log(email, password);
+    LoginModel.find({'email' : email, 'password' : password},function(err,data){
+        if (err) throw err;
+        //response.render('archive',{journals : data});
+        if(data.length != 0){
+            console.log('SUCCESS');
+        }
+        else{
+            console.log('INVALID');
+        }
+       
+    });
+    
+
 });
