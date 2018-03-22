@@ -88,10 +88,13 @@ app.post('/login',function(request,response,next){
     LoginModel.find({'email' : email, 'password' : password},function(err,data){
         if (err) throw err;
         //response.render('archive',{journals : data});
-        if(data.length != 0){
+        if(data.length != 0) {
+            response.send('SUCCESS');
             console.log('SUCCESS');
         }
         else{
+            response.status(403);
+            response.send('INVALID');
             console.log('INVALID');
         }
        
