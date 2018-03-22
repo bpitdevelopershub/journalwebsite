@@ -9,8 +9,10 @@ app.controller('loginController', function($scope, $rootScope, $window, login) {
             $scope.myData = data;
             console.log($scope.myData);
             $rootScope.loginCheck = true;
+            $window.location = "/#/journal";
         },(err)=>{
             $scope.errorMessage = err;
+            alert('Invalid Data');
         });
     }
 

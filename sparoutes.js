@@ -14,5 +14,9 @@ app.config(function($routeProvider,$locationProvider){
         templateUrl:'views/search.html', 
     }).when('/journal',{
         templateUrl:'views/journal.html', 
+    }).when('/informations/author',{
+        templateUrl:'views/info_author.html', 
+    }).when('/informations/reviewer',{
+        templateUrl:'views/info_reviewer.html', 
     }).otherwise({template:'No Data Available'});
 });

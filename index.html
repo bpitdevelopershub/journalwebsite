@@ -21,10 +21,10 @@
 <body ng-app="myapp">
     <div class="container-fluid head ">
        <div class="row">
-           <div class="col-md-3 col-sm-3">
+           <!-- <div class="col-md-3 col-sm-3">
                <a href="#"><img class="logo" src="http://www.bpitindia.com/images/logo.png" alt="logo"></a>
-           </div>
-           <div class="col-md-9 col-sm-9">
+           </div> -->
+           <div class="col-md-12 col-sm-12" style="padding-bottom: 20px;">
                <h1 class="head-title">INTERNATIONAL JOURNAL OF COMPUTING, INFORMATICS AND NETWORKS</h1>
            </div>
        </div>
@@ -49,14 +49,20 @@
                             <a class="nav-link" href="#/search">SEARCH</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#/current">SUBMISSION</a>
+                            <a class="nav-link" href="#/current">PAPER SUBMISSION</a>
                         </li>
+                        <li class="nav-item">
+                                <a class="nav-link" href="#/">EDITORIAL BOARD</a>
+                            </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#/archive">ARCHIVES</a>
                         </li>
                     </ul>
                 </div>
                 <ng-view></ng-view>
+                <footer>
+                    <p>Copyright &copy; 2018 IJCIN</p>
+                </footer>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 " >
                 <!-- <br> -->
@@ -106,21 +112,27 @@
                 </form> -->
                 <div class="browse">
                     <h6>Guidelines</h6>
-                    <a href="#" class="small-txt">Information for Author</a>
+                    <a href="/#/informations/author" class="small-txt">Information for Author</a>
                     <br>
-                    <a href="#" class="small-txt">Information for Reviewer</a>
+                    <a href="/#/informations/reviewer" class="small-txt">Information for Reviewer</a>
                 </div>
-                <div class="browse">
+                <div class="browse" style="margin-top:10px; padding-top: 0;">
                     <h6>Join</h6>
                     <a href="#" class="small-txt">Join as Author</a>
                     <br>
                     <a href="#" class="small-txt">Join as Reviewer</a>
                 </div>
-                <div class="browse">
+                <div class="browse" style="margin-top:10px; padding-top: 0;">
                     <h6>Downloads</h6>
                     <a href="#" class="small-txt">Copyright Form</a>
                     <br>
                     <a href="#" class="small-txt">Paper Template</a>
+                </div>
+                <div class="browse" style="margin-top:10px; padding-top: 0;">
+                    <h6>Others</h6>
+                    <a href="#" class="small-txt">Review Process</a>
+                    <br>
+                    <a href="#" class="small-txt">Conference Proposal</a>
                 </div>
                 <!--<h5 class="small">Information</h5>
 
@@ -141,7 +153,8 @@
     </div>
 
    <script src="js/factory/loginfactory.js"></script> 
-   <script src="js/controller/login.js"></script>
+   <script src="js/controller/login.js"></script> 
+   <script src="js/controller/journal.js"></script>
 </body>
 
 </html>
