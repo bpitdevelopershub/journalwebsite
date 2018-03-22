@@ -71,4 +71,5 @@ app.post('/login',function(request,response){
     var email = request.body.email;
     var password = request.body.password;
     // console.log(email, password);
+    response.json({ user: 'tobi' });
 });

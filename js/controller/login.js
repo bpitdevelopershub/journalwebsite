@@ -1,4 +1,4 @@
-app.controller('loginController', function($scope,login) {
+app.controller('loginController', function($scope, $rootScope, $window, login) {
     $scope.user = {
         email:'',
         password:''
@@ -6,10 +6,14 @@ app.controller('loginController', function($scope,login) {
     $scope.login = () => {
         var promise = login.doLogin($scope.user);
         promise.then((data)=>{
-            $scope.myData = data.message;
+            $scope.myData = data;
             console.log($scope.myData);
+            $rootScope.loginCheck = true;
+            $window.location = "/#/journal";
         },(err)=>{
             $scope.errorMessage = err;
         });
     }
+
+    $rootScope.loginCheck = false;
 });
