@@ -18,5 +18,7 @@ app.config(function($routeProvider,$locationProvider){
         templateUrl:'views/info_author.html', 
     }).when('/informations/reviewer',{
         templateUrl:'views/info_reviewer.html', 
+    }).when('/success',{
+        templateUrl:'views/article_success.html', 
     }).otherwise({template:'No Data Available'});
 });
